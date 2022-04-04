@@ -26,7 +26,6 @@ const int N = 0;
 void BFS(int **edges, int n, int s, bool *visited)
 {
     queue<int> st;
-    // unordered_map<int, int> mp;
     visited[s] = true;
     st.push(s);
 

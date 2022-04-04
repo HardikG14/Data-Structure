@@ -29,12 +29,8 @@ void printGraphDFS(int **edges, int n, int sv, bool *arr)
     arr[sv] = true;
     for (int i = 0; i < n; i++)
     {
-        if (edges[sv][i] == 1)
+        if (edges[sv][i] == 1 && !arr[i])
         {
-            if (arr[i])
-            {
-                continue;
-            }
             printGraphDFS(edges, n, i, arr);
         }
     }
@@ -131,7 +127,7 @@ int main()
 
     bfsConnected(edges, n);
     cout << endl;
-    dfsConnected(edges, n);
+    // dfsConnected(edges, n);
 
     for (int i = 0; i < n; i++)
     {
